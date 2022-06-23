@@ -1,0 +1,24 @@
+[
+    {
+        "data": [
+            {
+                "id": "1",
+                "nombre": "Producto 1",
+                "rutaImagen": "https:\/\/via.placeholder.com\/400x250",
+                "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur interdum urna vitae urna congue, nec lacinia eros tristique. Nullam nec nunc sed neque scelerisque commodo condimentum nec diam. Aliquam sed odio consectetur, condimentum sapien eget, faucibus ex. Donec sollicitudin, sapien at sollicitudin posuere, quam massa posuere massa, vehicula maximus sem elit nec lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur nec lectus volutpat, cursus erat at, ultricies justo. Duis at nulla feugiat, fermentum erat in, fermentum nibh. Donec id dictum orci. Nulla congue, dui vitae euismod laoreet, nisl elit mattis orci, in vestibulum enim leo eget nisl.",
+                "caracteristicas": "i3, 128gb ssd, 4gb ram, pantalla de 14",
+                "precio": "199",
+                "stock": "128"
+            },
+            {
+                "id": "2",
+                "nombre": "Producto 2",
+                "rutaImagen": "https:\/\/via.placeholder.com\/400x250",
+                "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur interdum urna vitae urna congue, nec lacinia eros tristique. Nullam nec nunc sed neque scelerisque commodo condimentum nec diam. Aliquam sed odio consectetur, condimentum sapien eget, faucibus ex. Donec sollicitudin, sapien at sollicitudin posuere, quam massa posuere massa, vehicula maximus sem elit nec lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur nec lectus volutpat, cursus erat at, ultricies justo. Duis at nulla feugiat, fermentum erat in, fermentum nibh. Donec id dictum orci. Nulla congue, dui vitae euismod laoreet, nisl elit mattis orci, in vestibulum enim leo eget nisl.",
+                "caracteristicas": "i5, 128gb ssd, 8gb ram, pantalla de 14",
+                "precio": "349",
+                "stock": "76"
+            }
+        ]
+    }
+]
