@@ -2,74 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    <!-- bootstrap.min css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Animate css -->
-    <!-- <link rel="stylesheet" href="/css/animate.css"> -->
-    <!-- icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-
-    <!-- Main Stylesheet -->
-    <!-- <link rel="stylesheet" href="/css/estilos.css"> -->
-    <title>Agregar producto</title>
+    {{> head}}
 </head>
 
 <body id="backend">
     <h1>Agregar producto</h1>
     <div class="container mb-4">
-        <!-- Start Top Header Bar -->
-        <header class="top-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-xs-12 col-sm-4">
-                    </div>
-                    <div class="my-3 col-md-4 col-xs-12 col-sm-4 text-center">
+        {{>header }}
 
-                        <span class="fs-2">LOGO</span>
-
-                    </div>
-                    <div class="col-md-4 col-xs-12 col-sm-4 d-flex justify-content-end align-items-center">
-                        <a href="/logout">LOGOUT: admin@test.com </a> | <a href="/admin">ADMIN</a>
-                    </div>
-                </div>
-            </div>
-        </header><!-- End Top Header Bar -->
-
-
-        <!-- Main Menu Section -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../front/index.html">Productos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../front/como-comprar.html">Como comprar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../front/sobre-nosotros.html">Sobre nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../front/contacto.html">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        {{> nav}}
         <div class="agregar-producto mt-4">
 
             <form action="/agregar" method="post" enctype="multipart/form-data">
@@ -86,7 +27,7 @@
                             <div class="mb-3 col-12 col-md-6">
                                 <label for="precio" class="form-label">Precio (u$s)</label>
                                 <input type="text" class="form-control" id="precio" placeholder="$ Precio en dólares"
-                                    name="precio"  required>
+                                    name="precio" required>
                             </div>
                         </div>
 
@@ -125,45 +66,11 @@
         </div>
     </div>
 
-    <footer class="footer section text-center mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <ul class="social-media">
-                        <li>
-                            <a href="https://www.facebook.com/">
-                                <i class="bi bi-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/">
-                                <i class="bi bi-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.twitter.com/">
-                                <i class="bi bi-twitter"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright-text">Copyright &copy;2022. Contacto <a
-                            href="mailto:">santiago.acosta@bue.edu.ar</a></p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- 
-    Essential Scripts
-    =====================================-->
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    {{> footer}}
 
 
     <script>
-       
+
 
     </script>
 
