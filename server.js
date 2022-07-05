@@ -4,6 +4,7 @@ const hbs = require('hbs')
 var path = require('path');
 require('./helpers/helper');
 
+
 // Para que tome los datos de los formularios
 app.use(express.json());
 app.use(express.urlencoded({
