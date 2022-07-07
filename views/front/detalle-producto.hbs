@@ -10,30 +10,31 @@
 {{> header}}
 
 {{> nav}}
-
+    <!-- Tomará UN OBJETO -->
     <section class="single-product">
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-5">
-                    <img src='/uploads/x1_carbon_4_3.jpg-1654801811279.jpg' alt='' class="img-fluid" />
+                    <img src='{{producto.rutaImagen}}' alt='' class="img-fluid" />
                 </div>
                 <div class="col-md-7">
                     <div class="single-product-details">
-                        <h2>Lenovo X200</h2>
-                        <p class="product-price">$ 319.062,15</p>
+                        <h2>{{producto.nombre}}</h2>
+                        <p class="product-price">{{dolarApeso producto.precio}}</p>
 
                         <p class="mt-2">
-                            Es una lenovo requete ... CARAA!
+                            {{producto.descripcion}}
                         </p>
 
-                        <ul>
+                        {{producto.caracteristicas}}
+                        <!-- <ul>
                             <li> i7 </li>
                             <li> 11gen </li>
                             <li> 256gb SSD </li>
                             <li> 16 gb RAM </li>
-                        </ul>
+                        </ul> -->
 
-                        <a href="mailto:comprar@comprar.com?subject=interes en el producto Lenovo X200 ID: 1"
+                        <a href="mailto:comprar@comprar.com?subject=interes en el producto {{producto.nombre}} ID: {{producto.id}}"
                             class="btn btn-info mt-20">Comprar</a>
 
                     </div>
@@ -44,6 +45,7 @@
     </section>
    {{> footer}}
 
+    
 </body>
 
 </html>

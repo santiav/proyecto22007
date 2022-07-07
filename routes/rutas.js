@@ -6,7 +6,7 @@ const {
     contactoGET,
     contactoPOST,
     comoComprarGET,
-    detalleProductoGET,
+    detalleProductoGET_ID,
     sobreNosotrosGET
 } = require('../controllers/front.ctrl')
 
@@ -21,7 +21,7 @@ router.post('/contacto', contactoPOST)
 
 router.get('/como-comprar', comoComprarGET)
 
-router.get('/detalle-producto', detalleProductoGET)
+router.get('/detalle-producto/:id', detalleProductoGET_ID)
 
 router.get('/sobre-nosotros', sobreNosotrosGET)
 
