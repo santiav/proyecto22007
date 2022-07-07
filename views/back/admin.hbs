@@ -12,6 +12,10 @@
        {{>header }}
 
        {{> nav}}
+
+       {{#if mensaje}}
+            <p class="h2 alert alert-success text-center">{{mensaje}}</p>
+       {{/if}}
         <div class="table-responsive mt-4">
 
             <table class="table caption-top">
@@ -24,39 +28,50 @@
                         <th scope="col" style="max-width: 30%">Descripcion</th>
                         <th scope="col" style="max-width: 10%">Características</th>
                         <th scope="col" style="max-width: 5%">Precio ($)</th>
+                        <th scope="col" style="max-width: 2%">Stock</th>
                         <th scope="col" style="max-width: 5%">Acciones</th>
                     </tr>
                 </thead>
 
                 <tbody id="admin-productos">
+                    {{#if productos}}
+                    {{#each productos}}
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Lenovo X200</td>
-                        <td><img src="../../uploads/x1_carbon_4_3.jpg-1654801811279.jpg" alt="imagen de Lenovo X200">
+                        <th scope="row">{{id}}</th>
+                        <td>{{nombre}}</td>
+                        <td><img src={{rutaImagen}} alt="imagen de {{nombre}}">
                         </td>
                         <td class="descripcion">
-                            <div>Es una lenovo requete ... CARAA! </div>
+                            <div>{{descripcion}}</div>
                         </td>
                         <td class="caracteristicas">
-
-                            <ul>
+                            {{caracteristicas}}
+                            <!-- <ul>
                                 <li> i7 </li>
                                 <li> 11gen </li>
                                 <li> 256gb SSD </li>
                                 <li> 16 gb RAM </li>
-                            </ul>
+                            </ul> -->
                         </td>
-                        <td>$ 319.062,15 </td>
+                        <td>{{dolarApeso precio}}</td>
+                        <td>{{stock}}</td>
                         <td>
-                            <a href="editar-producto.html">Editar </a><br>
-                            <a href="../borrar/1">Borrar</a>
+                            <a href="/editar/{{id}}">Editar </a><br>
+                            <a href="/borrar/{{id}}">Borrar</a>
                         </td>
                     </tr>
+                    {{/each}}
+                    {{else}}
+
+                    <tr>
+                        <td colspan="8"><p>No hay productos cargados, por favor cargá alguno.</p></td>
+                    </tr>
+                    {{/if}}
 
                 </tbody>
 
             </table>
-            <a href="agregar-producto.html" class="btn btn-info">Agregar producto</a>
+            <a href="/agregar-producto" class="btn btn-info">Agregar producto</a>
 
         </div>
 
