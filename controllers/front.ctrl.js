@@ -3,21 +3,38 @@ let nodemailer = require('nodemailer');
 let db = require('../db')
 
 const inicioGET = function (req, res) {
+
+
+    /* console.log("antes", req.session.contador)
+
+    req.session.contador = req.session.contador ? req.session.contador + 1 : 1;
+
+    console.log("despues", req.session.contador)
+    console.log(req.session)
+
+    res.send(`visita nro ${req.session.contador}`) */
    
     let sql = "SELECT * FROM productos"
     db.query(sql, function(error, data) {
         if (error) res.send(`Ocurrió un error ${error.code}`)
         res.render('index', {
             titulo: "Mi emprendimiento",
+            logueado: req.session.logueado,
+            usuario: req.session.usuario,
             productos: data
         })
     })
+    
 
 
 }
 
 const contactoGET = function (req, res) {
-    res.render('contacto')
+    res.render('contacto', {
+        titulo: "Contacto",
+        logueado: req.session.logueado,
+        usuario: req.session.usuario,
+    })
 }
 
 const contactoPOST = function(req, res) {
@@ -65,7 +82,11 @@ const contactoPOST = function(req, res) {
 }
 
 const comoComprarGET = function(req,res) {
-    res.render('como-comprar')
+    res.render('como-comprar', {
+        titulo: "Cómo comprar",
+        logueado: req.session.logueado,
+        usuario: req.session.usuario,
+    })
 }
 
 const detalleProductoGET_ID =  function(req,res) {
@@ -83,7 +104,10 @@ const detalleProductoGET_ID =  function(req,res) {
             })
         } else {
             res.render('detalle-producto', {
-                producto: data[0]
+                titulo: `Detalle del producto ${data[0].nombre}`,
+                producto: data[0],
+                logueado: req.session.logueado,
+                usuario: req.session.usuario,
             })
         }
     })
@@ -91,7 +115,11 @@ const detalleProductoGET_ID =  function(req,res) {
 }
 
 const sobreNosotrosGET = function(req,res) {
-    res.render('sobre-nosotros')
+    res.render('sobre-nosotros', {
+        titulo: "Sobre nosotros",
+        logueado: req.session.logueado,
+        usuario: req.session.usuario,
+    })
 }
 
 module.exports = {

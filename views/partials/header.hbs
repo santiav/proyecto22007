@@ -8,7 +8,11 @@
                 <span class="fs-2">LOGO</span>
             </div>
             <div class="col-md-4 col-xs-12 col-sm-4 d-flex justify-content-end align-items-center">
+                {{#if logueado}}
+                    <a href="/logout">LOGOUT: {{usuario}} </a> | <a href="/admin">ADMIN</a>
+                {{else}}
                 <a href="/login">LOGIN </a>
+                {{/if}}
             </div>
         </div>
     </div>

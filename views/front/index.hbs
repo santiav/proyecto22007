@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-   {{> head}}
+    {{> head}}
 </head>
 
 <body>
 
-{{> header}}
+    {{> header}}
 
-{{> nav}}
+    {{> nav}}
     <div class="px-4 py-5 text-center bg-primary bg-gradient text-light">
         <h1 class="display-5 fw-bold ">Mi emprendimiento</h1>
         <div class="col-lg-6 mx-auto">
@@ -30,8 +30,7 @@
                 <div class="col-md-3">
                     <div class="product-item">
                         <div class="product-thumb">
-                            <img class="img-fluid" src="{{rutaImagen}}"
-                                alt="product-img" />
+                            <img class="img-fluid" src="{{rutaImagen}}" alt="product-img" />
                             <div class="preview-meta">
                                 <ul>
                                     <li>
@@ -61,8 +60,7 @@
                                 <div class="row">
                                     <div class="col-md-8 col-sm-6 col-xs-12">
                                         <div class="modal-image">
-                                            <img class="img-fluid" src="{{rutaImagen}}"
-                                                alt="product-img" />
+                                            <img class="img-fluid" src="{{rutaImagen}}" alt="product-img" />
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-6 col-xs-12">
@@ -70,21 +68,18 @@
                                             <h2 class="product-title">{{nombre}}</h2>
                                             <p class="product-price">{{dolarApeso precio}}</p>
                                             <div class="product-short-description">
-                                                {{descripcion}}
-                                                {{caracteristicas}}
-                                                <!-- <ul>
-                                                    <li> i7 </li>
-                                                    <li> 11gen </li>
-                                                    <li> 256gb SSD </li>
-                                                    <li> 16 gb RAM </li>
-                                                </ul> -->
+                                                
+                                                {{#listado caracteristicas}}
+                                                    {{this}}
+                                                {{/listado}}
+
                                             </div>
 
-                                            <a href="/detalle-producto/{{id}}" class="btn btn-transparent d-block mb-3">Ver detalles
+                                            <a href="/detalle-producto/{{id}}"
+                                                class="btn btn-transparent d-block mb-3">Ver detalles
                                                 del producto</a>
 
-                                            <a href="mailto:"
-                                                class="btn btn-info mt-20">Comprar</a>
+                                            <a href="mailto:" class="btn btn-info mt-20">Comprar</a>
                                         </div>
                                     </div>
                                 </div>
@@ -95,7 +90,7 @@
                 </div>
                 {{/each}}
                 {{else}}
-                    <h2>No hay productos actualmente</h2>
+                <h2>No hay productos actualmente</h2>
                 {{/if}}
 
             </div>
@@ -104,7 +99,7 @@
 
 
 
-   {{> footer}}
+    {{> footer}}
 
 </body>
 

@@ -27,3 +27,17 @@ hbs.registerHelper("dolarApeso", function(precio) {
     let precioFinalARS = dolarPAIS * precio
     return new Intl.NumberFormat("es-AR", {style: "currency", currency: "ARS"}).format(precioFinalARS)
 })
+
+hbs.registerHelper("listado", function(texto) {
+
+    
+    let array = texto.split(",")
+    html = "<ul>"
+
+    for (let item of array) {
+        html = `${html} <li>${item}</li>`
+        console.log(html)
+    }
+
+    return html + "</ul>"
+})

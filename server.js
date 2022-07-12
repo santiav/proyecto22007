@@ -1,8 +1,30 @@
 const express = require('express')
+const session = require('express-session')
+const MySQLStore = require('express-mysql-session')(session);
 const app = express()
 const hbs = require('hbs')
 var path = require('path');
 require('./helpers/helper');
+
+
+let opciones = {
+    host     : 'localhost',
+    port     : 3306,
+    user     : 'root',
+    password : '',
+    database : 'prueba_sesiones'
+}
+
+let sessionStore = new MySQLStore(opciones)
+
+app.use(session({
+    key: 'cookie_22007',
+    secret: "sarasa",
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false,
+    cookie: { maxAge: 300000 } // 5 minutos (ms)
+}))
 
 
 // Para que tome los datos de los formularios
