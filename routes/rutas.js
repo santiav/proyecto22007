@@ -34,7 +34,8 @@ const {
     editarProductoGET,
     editarProductoPOST,
     borrarGET,
-    loginGET
+    loginGET,
+    loginPOST
 }= require('../controllers/back.ctrl')
 
 router.get('/admin',adminGET )
@@ -46,6 +47,7 @@ router.get('/editar/:id', editarProductoGET)
 router.post('/editar/:id', editarProductoPOST)
 router.get('/borrar/:id', borrarGET)
 router.get('/login', loginGET)
+router.post('/login', loginPOST)
 
 
 module.exports = router
