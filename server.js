@@ -8,11 +8,11 @@ require('./helpers/helper');
 
 
 let opciones = {
-    host     : 'localhost',
-    port     : 3306,
-    user     : 'root',
-    password : '',
-    database : 'prueba_sesiones'
+    host     : 'bqdmd5e4wvqxh5ozpcmm-mysql.services.clever-cloud.com',
+    user     : 'ue7n7sdy3pvel9cj',
+    password : '9O6keGEaKgcAFB35jhUN',
+    port : 3306,
+    database : 'bqdmd5e4wvqxh5ozpcmm'
 }
 
 let sessionStore = new MySQLStore(opciones)

@@ -14,10 +14,10 @@
         <div class="agregar-producto mt-4">
             {{#if mensaje}}
                                                    
-                <div class="text-center alert alert-success" role="alert" >{{mensaje}}</div>
+                <div class="text-center alert alert-{{clase}}" role="alert" >{{mensaje}}</div>
 
             {{/if}}
-            <form action="/agregar-producto" method="post">
+            <form action="/agregar-producto" method="post"  enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="row">
@@ -39,8 +39,12 @@
                         <div class="col-12" id="">
                             <div class="row">
                                 <div class="col-6">
-                                    <label for="imagenDeProducto" class="form-label ">URL imagen</label>
-                                    <input type="text" name="rutaImagen">
+                                   <label for="rutaImagen" class="form-label btn btn-primary">Subir imagen</label>
+                                    <div class="preview">
+                                        <p>No hay imagen seleccionada para subir</p>
+                                    </div>
+                                    <input class="form-control" type="file" id="rutaImagen" name="rutaImagen"
+                                        accept=".png,.jpg,.jpeg" required>
                                 </div>
                                 <div class="col-6">
                                     <label for="stock">Stock</label>
@@ -83,7 +87,54 @@
 
 
     <script>
+ const imagenDeProducto = document.querySelector('#rutaImagen');
+        const preview = document.querySelector('.preview');
 
+        imagenDeProducto.style.opacity = 0;
+        imagenDeProducto.addEventListener('change', updateImageDisplay);
+
+        console.log("preview.firstChild", preview.firstChild)
+
+        function updateImageDisplay() {
+            while (preview.firstChild) {
+                preview.removeChild(preview.firstChild);
+            }
+
+            const curFiles = imagenDeProducto.files;
+            console.log("curFiles: ", curFiles)
+            if (curFiles.length === 0) {
+                const para = document.createElement('p');
+                para.textContent = 'No hay una imagen seleccionada para subir';
+                preview.appendChild(para);
+            } else {
+                const list = document.createElement('ol');
+                preview.appendChild(list);
+
+                for (const file of curFiles) {
+                    const listItem = document.createElement('li');
+                    const para = document.createElement('p');
+                    para.textContent = `Archivo ${file.name}, tamaño ${returnFileSize(file.size)}.`;
+                    const image = document.createElement('img');
+                    image.src = URL.createObjectURL(file);
+
+                    listItem.appendChild(image);
+                    listItem.appendChild(para);
+
+
+                    list.appendChild(listItem);
+                }
+            }
+        }
+
+        function returnFileSize(number) {
+            if (number < 1024) {
+                return number + 'bytes';
+            } else if (number >= 1024 && number < 1048576) {
+                return (number / 1024).toFixed(1) + 'KB';
+            } else if (number >= 1048576) {
+                return (number / 1048576).toFixed(1) + 'MB';
+            }
+        }
 
     </script>
 

@@ -1,9 +1,9 @@
 let mysql      = require('mysql');
 let connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '',
-  database : 'proyecto22007'
+  host     : 'bqdmd5e4wvqxh5ozpcmm-mysql.services.clever-cloud.com',
+  user     : 'ue7n7sdy3pvel9cj',
+  password : '9O6keGEaKgcAFB35jhUN',
+  database : 'bqdmd5e4wvqxh5ozpcmm'
 });
  
 connection.connect(function(error) {
