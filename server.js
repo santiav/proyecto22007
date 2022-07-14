@@ -6,6 +6,8 @@ const hbs = require('hbs')
 var path = require('path');
 require('./helpers/helper');
 
+let puerto = process.env.PORT || 3000
+
 
 let opciones = {
     host     : 'bqdmd5e4wvqxh5ozpcmm-mysql.services.clever-cloud.com',
@@ -54,6 +56,6 @@ app.use(function(req, res) {
 });
 
 
-app.listen(3000, function () {
-    console.log("El servidor está online en puerto 3000")
+app.listen(puerto, function () {
+    console.log(`El servidor está online en puerto ${puerto}`)
 })
