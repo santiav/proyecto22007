@@ -10,18 +10,18 @@ let puerto = process.env.PORT || 3000
 
 
 let opciones = {
-    host     : 'bqdmd5e4wvqxh5ozpcmm-mysql.services.clever-cloud.com',
-    user     : 'ue7n7sdy3pvel9cj',
-    password : '9O6keGEaKgcAFB35jhUN',
-    port : 3306,
-    database : 'bqdmd5e4wvqxh5ozpcmm'
+    host     : process.env.DB_HOST,
+    user     : process.env.DB_USER,
+    password : process.env.DB_PASSWORD,
+    database : process.env.DB_DATABASE,
+    port: 3306
 }
 
 let sessionStore = new MySQLStore(opciones)
 
 app.use(session({
     key: 'cookie_22007',
-    secret: "sarasa",
+    secret: process.env.SESSION_SECRET,
     store: sessionStore,
     resave: false,
     saveUninitialized: false,

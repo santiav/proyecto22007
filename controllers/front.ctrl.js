@@ -40,19 +40,18 @@ const contactoGET = function (req, res) {
 const contactoPOST = function(req, res) {
     // 1. Definir el transportador
     let transporter = nodemailer.createTransport({
-        host: "smtp.mailtrap.io",
-        port: 2525,
+        host: process.env.EMAIL_HOST,
+        port: process.env.EMAIL_PORT,
         auth: {
-          user: "9e67f1cd60d6f3",
-          pass: "086c522eabf980"
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS
         }
     });
     // 2. Definimos el cuerpo de mail
-    console.log("BODY: ", req.body)
     let data = req.body
     let mailOptions = {
         from: data.nombre,
-        to: 'santiago.acosta@bue.edu.ar',
+        to: process.env.EMAIL_TO,
         subject: data.asunto,
         html: `
             <h2>El siguiente mensaje ha llegado de la web</h2>
