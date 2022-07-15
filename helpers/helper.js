@@ -37,7 +37,7 @@ hbs.registerHelper("listado", function(texto) {
 
     for (let item of array) {
         html = `${html} <li>${item}</li>`
-        console.log(html)
+        // console.log(html)
     }
 
     return html + "</ul>"
