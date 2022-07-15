@@ -93,7 +93,7 @@ footer .bi:hover {
     line-height:2
 }
 
-
+/* BACK - Editar */
 #imagenCargada {
     position: relative;
 }
@@ -119,6 +119,28 @@ footer .bi:hover {
 	text-transform: uppercase;
 	transition: all 0.5s
 }
+/* BACK - Agregar producto */
+
+#subirImagen .preview {
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	padding: 10px;
+}
+#subirImagen .preview img {
+	max-width: 100%;
+	height: auto;
+
+}
+#subirImagen .preview p {
+	font-size: 0.7rem;
+	line-height: 1rem;
+}
+#subirImagen .preview ol {
+	padding: 0;
+	list-style: none;
+}
+
+
 /* /Inicio  */
 
 .product-item {

@@ -3,6 +3,7 @@
 
 <head>
     {{> head}}
+        
 </head>
 
 <body id="backend">
@@ -28,28 +29,31 @@
                             </div>
 
 
-                            <div class="mb-3 col-12 col-md-6">
+                            <div class="mb-3 col-12 col-md-4">
                                 <label for="precio" class="form-label">Precio (u$s)</label>
-                                <input type="text" class="form-control" id="precio" placeholder="$ Precio en dólares"
-                                    name="precio" required>
+                                <input type="text" class="form-control" id="precio" 
+                                    name="precio" pattern="^[0-9]*$" title="Ingresar número" required>
                             </div>
+                           
+                                <div class="mb-3 col-12 col-md-2">
+                                    <label for="stock" class="form-label">Stock</label>
+                                    <input class="form-control" type="text" name="stock" id="stock" pattern="^[0-9]*$" >
+                                </div>
+                            
                         </div>
 
 
-                        <div class="col-12" id="">
+                        <div class="col-12" id="subirImagen">
                             <div class="row">
-                                <div class="col-6">
-                                   <label for="rutaImagen" class="form-label btn btn-primary">Subir imagen</label>
+                                <div class="col">
+                                   <label for="rutaImagen" class="form-label btn btn-primary w-100">Subir imagen</label>
                                     <div class="preview">
                                         <p>No hay imagen seleccionada para subir</p>
                                     </div>
                                     <input class="form-control" type="file" id="rutaImagen" name="rutaImagen"
                                         accept=".png,.jpg,.jpeg" required>
                                 </div>
-                                <div class="col-6">
-                                    <label for="stock">Stock</label>
-                                    <input type="number" name="stock" id="stock">
-                                </div>
+                                
                             </div>
 
                         </div>

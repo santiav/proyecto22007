@@ -159,8 +159,10 @@ const loginPOST = function (req, res) {
 
     if (usuario && clave) {
         let sql = "SELECT * FROM cuentas WHERE usuario = ? AND clave = ?"
+        console.log(sql)
         db.query(sql, [usuario, clave], function (err, data) {
             console.log("DATA", data)
+            console.log("ERROR", err)
             if (data.length) {
                 // ok
                 req.session.logueado = true;
