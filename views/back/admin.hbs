@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     {{> head}}
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
 </head>
 
 <body id="backend">
@@ -77,6 +79,16 @@
 
     {{>footer }}
 
+ <script type="module">
+        const dataTable = new simpleDatatables.DataTable(".table", {
+            labels: {
+                info: "Mostrando {start} a {end} de {rows} productos",
+                placeholder: "Buscar...",
+                perPage: "{select} productos por página",
+                noRows: "No hay productos cargados"
+            }
+        })
+    </script>
 
 
 </body>
