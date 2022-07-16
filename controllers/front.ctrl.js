@@ -94,7 +94,7 @@ const detalleProductoGET_ID =  function(req,res) {
     let sql = "SELECT * FROM productos WHERE id = ?"
     db.query(sql, id, function(err, data) {
       
-        if (err) res.send(`Ocurrió un error ${err.code}`);
+        if (err) throw err;
 
         if (data == "") {
             res.status(404).render("404", {

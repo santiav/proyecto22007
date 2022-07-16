@@ -119,22 +119,25 @@ footer .bi:hover {
 	text-transform: uppercase;
 	transition: all 0.5s
 }
-/* BACK - Agregar producto */
-
+/* BACK - Agregar producto y editar (previsualización de la imagen) */
+#imagenCargada .preview,
 #subirImagen .preview {
 	border: 1px solid lightgray;
 	border-radius: 5px;
 	padding: 10px;
 }
+#imagenCargada .preview img,
 #subirImagen .preview img {
 	max-width: 100%;
 	height: auto;
 
 }
+#imagenCargada .preview p,
 #subirImagen .preview p {
 	font-size: 0.7rem;
 	line-height: 1rem;
 }
+#imagenCargada .preview ol,
 #subirImagen .preview ol {
 	padding: 0;
 	list-style: none;

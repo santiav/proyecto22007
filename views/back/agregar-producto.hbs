@@ -3,7 +3,7 @@
 
 <head>
     {{> head}}
-        
+
 </head>
 
 <body id="backend">
@@ -14,11 +14,11 @@
         {{> nav}}
         <div class="agregar-producto mt-4">
             {{#if mensaje}}
-                                                   
-                <div class="text-center alert alert-{{clase}}" role="alert" >{{mensaje}}</div>
+
+            <div class="text-center alert alert-{{clase}}" role="alert">{{mensaje}}</div>
 
             {{/if}}
-            <form action="/agregar-producto" method="post"  enctype="multipart/form-data">
+            <form action="/agregar-producto" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="row">
@@ -31,29 +31,30 @@
 
                             <div class="mb-3 col-12 col-md-4">
                                 <label for="precio" class="form-label">Precio (u$s)</label>
-                                <input type="text" class="form-control" id="precio" 
-                                    name="precio" pattern="^[0-9]*$" title="Ingresar número" required>
+                                <input type="text" class="form-control" id="precio" name="precio" pattern="^[0-9]*$"
+                                    title="Ingresar número" required>
                             </div>
-                           
-                                <div class="mb-3 col-12 col-md-2">
-                                    <label for="stock" class="form-label">Stock</label>
-                                    <input class="form-control" type="text" name="stock" id="stock" pattern="^[0-9]*$" >
-                                </div>
-                            
+
+                            <div class="mb-3 col-12 col-md-2">
+                                <label for="stock" class="form-label">Stock</label>
+                                <input class="form-control" type="text" name="stock" id="stock" pattern="^[0-9]*$">
+                            </div>
+
                         </div>
 
 
-                        <div class="col-12" id="subirImagen">
+                        <div class="mb-3 col-12" id="subirImagen">
                             <div class="row">
                                 <div class="col">
-                                   <label for="rutaImagen" class="form-label btn btn-primary w-100">Subir imagen</label>
+                                    <label for="rutaImagen" class="form-label btn btn-primary w-100">Subir
+                                        imagen</label>
                                     <div class="preview">
                                         <p>No hay imagen seleccionada para subir</p>
                                     </div>
                                     <input class="form-control" type="file" id="rutaImagen" name="rutaImagen"
                                         accept=".png,.jpg,.jpeg" required>
                                 </div>
-                                
+
                             </div>
 
                         </div>
@@ -91,7 +92,7 @@
 
 
     <script>
- const imagenDeProducto = document.querySelector('#rutaImagen');
+        const imagenDeProducto = document.querySelector('#rutaImagen');
         const preview = document.querySelector('.preview');
 
         imagenDeProducto.style.opacity = 0;
