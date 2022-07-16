@@ -12,7 +12,7 @@ connection.connect(function(error) {
 });
  
 setInterval(function () {
-    conn.query('SELECT 1');
+    connection.query('SELECT 1');
     console.log("manteniendo viva la conexion")
 }, 50000);
 
